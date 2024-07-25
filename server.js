@@ -26,6 +26,14 @@ app.get("/", (req,res) => {
   res.render('index.ejs');
 })
 
+// GET ALL puppies list
+//! make index page
+// app.get('puppies', async (req,res) => {
+//   const allPuppies = await Puppy.find();
+//   console.log(allPuppies);
+//   res.send('Here are your puppies!')
+// })
+
 
 // GET Puppies New
 app.get('/puppies/new', (req,res) => {
