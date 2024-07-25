@@ -1,7 +1,9 @@
-const express = require('express');
+const express = require("express");
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 dotenv.config ();
+const app = express();
+
 
 mongoose.connect(proncess.env.MONGODB_URI);
 mongoose.connection.on('connected', () => {
@@ -12,3 +14,8 @@ app.listen(3000, () => {
   console.log('Listening on port 3000');
 });
 
+const Puppy = require('/models/puppies.js')
+
+app.get("/", (req,res) => {
+  res.send('Hello');
+})
