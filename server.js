@@ -6,6 +6,9 @@ dotenv.config ();
 const Puppy = require('./models/puppies.js');
 
 const app = express();
+
+app.use(express.urlencoded({ extended: false }));
+
 mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on('connected', () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
@@ -31,11 +34,11 @@ app.get('/puppies/new', (req,res) => {
 
 //Post puppies/new
 app.post('/puppies', async (req,res) => {
-  // if (req.body.isGoodWithChildren === "on") {
-  //   req.body.isGoodWithChildren = true;
-  // } else {
-  //   req.body.isGoodWithChildren = false;
-  // }
+  if (req.body.isGoodWithChildren === "on") {
+    req.body.isGoodWithChildren = true;
+  } else {
+    req.body.isGoodWithChildren = false;
+  }
   await Puppy.create(req.body);
   res.redirect('/puppies/new')
 })
