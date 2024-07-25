@@ -9,17 +9,18 @@
     <h1>Add your Puppies!!!</h1>
     <form action="/puppies" method="POST">
       <label for="name">Name:</label>
-      <input type="text" name="name" id="name" />
-      <br /><br>
+      <input type="text" name="name" id="name" required />
+
       <label for="breed">Breed:</label>
-      <input type="text" name="breed" id="breed" />
-      <br /><br>
+      <input type="text" name="breed" id="breed" required />
+      
       <label for="isGoodWithChildren">isGoodWithChildren:</label>
       <input
         type="checkbox"
         name="isGoodWithChildren"
         id="isGoodWithChildren"
       />
+      <button type="submit">Add Puppy</button>
     </form>
   </body>
 </html>
