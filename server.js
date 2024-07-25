@@ -2,10 +2,11 @@ const express = require("express");
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 dotenv.config ();
+
+const Puppy = require('./models/puppies.js');
+
 const app = express();
-
-
-mongoose.connect(proncess.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on('connected', () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
@@ -14,8 +15,12 @@ app.listen(3000, () => {
   console.log('Listening on port 3000');
 });
 
-const Puppy = require('/models/puppies.js')
+//Query Request 
 
 app.get("/", (req,res) => {
-  res.send('Hello');
+  res.render('index.ejs');
 })
+
+app.get('/puppies/new', (req,res) => {
+  res.render('puppies/new.ejs');
+});

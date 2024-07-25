@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Puppy Form</title>
+  </head>
+  <body>
+    <h1>Add your Puppies!!!</h1>
+    <form action="/puppies" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" />
+      <br /><br>
+      <label for="breed">Breed:</label>
+      <input type="text" name="breed" id="breed" />
+      <br /><br>
+      <label for="isGoodWithChildren">isGoodWithChildren:</label>
+      <input
+        type="checkbox"
+        name="isGoodWithChildren"
+        id="isGoodWithChildren"
+      />
+    </form>
+  </body>
+</html>
