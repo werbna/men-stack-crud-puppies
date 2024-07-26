@@ -10,8 +10,10 @@ nav {
   padding: 10px;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 97.2%;
   z-index: 1000;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 nav ul {
@@ -43,4 +45,14 @@ nav ul li a:hover {
 
 .page-title {
   font-size: 24px
+}
+
+
+.main-content {
+  display: flexbox;
+  margin-top: 60px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
