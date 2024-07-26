@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show Puppy Details</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Puppy Details</h1>
+    <div class="puppy-details">
+      <h2><%= puppy.name %></h2>
+      <p><strong>Breed:</strong> <%= puppy.breed %></p>
+      <p><strong>Good with Children:</strong> <%= puppy.isGoodWithChildren ? "Yes" : "No" %></p>
+    </div>
+    <a href="/puppies" class="btn">Back to Puppies List</a>
+  </div>
+</body>
+</html>
