@@ -14,9 +14,7 @@ mongoose.connection.on('connected', () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
-app.listen(3000, () => {
-  console.log('Listening on port 3000');
-});
+
 
 //Query Request 
 
@@ -27,12 +25,11 @@ app.get("/", (req,res) => {
 })
 
 // GET ALL puppies list
-//! make index page
-// app.get('puppies', async (req,res) => {
-//   const allPuppies = await Puppy.find();
-//   console.log(allPuppies);
-//   res.send('Here are your puppies!')
-// })
+app.get('/puppies', async (req,res) => {
+  const allPuppies = await Puppy.find();
+  console.log(allPuppies);
+  res.render('puppies/index.ejs', {puppies: allPuppies});
+})
 
 
 // GET Puppies New
@@ -50,3 +47,9 @@ app.post('/puppies', async (req,res) => {
   await Puppy.create(req.body);
   res.redirect('/puppies/new')
 })
+
+
+
+app.listen(3000, () => {
+  console.log('Listening on port 3000');
+});
