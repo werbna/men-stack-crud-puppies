@@ -33,14 +33,13 @@ app.get("/", (req,res) => {
 app.get('/puppies/new', (req,res) => {
   res.render('puppies/new.ejs');
 });
-
 //GET ALL puppies list
 app.get('/puppies', async (req,res) => {
   const allPuppies = await Puppy.find();
   console.log(allPuppies);
   res.render('puppies/index.ejs', {puppies: allPuppies});
 })
-
+//GET Single Puppy
 app.get('/puppies/:puppyId', async (req, res) => {
   const foundPuppy = await Puppy.findById(req.params.puppyId);
   console.log(foundPuppy)
@@ -63,8 +62,24 @@ app.delete('/puppies/:puppyId', async (req,res) => {
   await Puppy.findByIdAndDelete(req.params.puppyId);
   res.redirect('/puppies')
 })
-//PUT 
 
+//PUT 
+app.get('/puppies/:puppyId/edit', async (req, res) => {
+  const foundPuppy = await Puppy.findById(req.params.puppyId);
+  res.render('puppies/edit.ejs', { 
+    puppy: foundPuppy });
+  });
+
+app.put('/puppies/:puppyId', async (req, res) => {
+    if (req.body.isGoodWithChildren === "on") {
+      req.body.isGoodWithChildren = true;
+    } else {
+      req.body.isGoodWithChildren = false;
+    }
+    Puppy.findByIdAndUpdate(req.params.puppyId, req.body, { new: true }, (err, updatedPuppy) => {
+    res.redirect(`/puppies/${req.params.puppyId}`);
+  });
+});
 
 
 app.listen(3000, () => {

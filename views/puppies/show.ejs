@@ -15,7 +15,16 @@
       <p><strong>Age:</strong> <%= puppy.age %> years</p>
       <p><strong>Good with Children:</strong> <%= puppy.isGoodWithChildren ? "Yes" : "No" %></p>
     </div>
+    <div>
+      <form action="/puppies/<%= puppy._id %>?_method=DELETE" method="POST" style="display: inline;">
+        <button type="submit">Delete</button>
+      </form>
+      <a href="/puppies/<%= puppy._id %>/edit">
+        <button type="submit">Edit</button>
+      </a>
+    </div>
     <a href="/puppies">Back to Puppies List</a>
+  </div>
   </div>
 </body>
 </html>

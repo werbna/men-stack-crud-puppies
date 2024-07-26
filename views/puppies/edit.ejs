@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Puppy Details</title>
+</head>
+<body>
+  <div>
+    <h1>Edit <%= puppy.name %> Information</h1>
+    <form action="/puppies" method="POST">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="breed">Breed:</label>
+        <input type="text" id="breed" name="breed" required>
+      </div>
+      <div>
+        <label for="coat">Coat:</label>
+        <select id="coat" name="coat">
+          <option value="">Select coat type</option>
+          <option value="Short">Short</option>
+          <option value="Medium">Medium</option>
+          <option value="Long">Long</option>
+          <option value="Curly">Curly</option>
+        </select>
+      </div>
+      <div>
+        <label for="age">Age (in years):</label>
+        <input type="number" id="age" name="age" min="0" required>
+      </div>
+      <div>
+        <label for="isGoodWithChildren">Good with Children:</label>
+        <input type="checkbox" id="isGoodWithChildren" name="isGoodWithChildren">
+      </div>
+      <div>
+        <button type="submit">Finish Edit</button>
+      </div>
+    </form>
+    <a href="/puppies">Back to Puppies List</a>
+  </div>
