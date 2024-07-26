@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Puppy Form</title>
-  </head>
-  <body>
-    <h1>Add your Puppies!!!</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Puppy</title>
+</head>
+<body>
+  <div>
+    <h1>Create a New Puppy</h1>
     <form action="/puppies" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name" required />
-
-      <label for="breed">Breed:</label>
-      <input type="text" name="breed" id="breed" required />
-      
-      <label for="isGoodWithChildren">isGoodWithChildren:</label>
-      <input
-        type="checkbox"
-        name="isGoodWithChildren"
-        id="isGoodWithChildren"
-      />
-      <button type="submit">Add Puppy</button>
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="breed">Breed:</label>
+        <input type="text" id="breed" name="breed" required>
+      </div>
+      <div>
+        <label for="coat">Coat:</label>
+        <select id="coat" name="coat">
+          <option value="">Select coat type</option>
+          <option value="Short">Short</option>
+          <option value="Medium">Medium</option>
+          <option value="Long">Long</option>
+          <option value="Curly">Curly</option>
+        </select>
+      </div>
+      <div>
+        <label for="age">Age (in years):</label>
+        <input type="number" id="age" name="age" min="0" required>
+      </div>
+      <div>
+        <label for="isGoodWithChildren">Good with Children:</label>
+        <input type="checkbox" id="isGoodWithChildren" name="isGoodWithChildren">
+      </div>
+      <div>
+        <button type="submit">Create Puppy</button>
+      </div>
     </form>
-  </body>
+    <a href="/puppies">Back to Puppies List</a>
+  </div>
+</body>
 </html>
