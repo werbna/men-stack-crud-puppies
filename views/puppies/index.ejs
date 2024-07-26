@@ -4,18 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Index</title>
+  <link rel="stylesheet" href="/stylesheets/styles.css">
 </head>
 <body>
   <%- include('../partials/navbar') %>
-  <div>
-    <h1>All Puppies</h1>
+  <div class="container">
+    <h1 class="page-title">All Puppies</h1>
+    <ul class="puppy-list">
+      <% puppies.forEach((puppy) => { %>
+        <li class="puppy-list-item">
+          <a href="/puppies/<%=puppy._id%>" class="puppy-link"><%= puppy.name %></a>
+        </li>
+      <% }) %>
+    </ul>
   </div>
-  <ul>
-    <% puppies.forEach((puppy) => { %>
-      <li>
-        <a href="/puppies/<%=puppy._id%>"><%= puppy.name %></a>
-      </li>
-    <% }) %>
-  </ul>
 </body>
 </html>

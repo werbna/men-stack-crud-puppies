@@ -4,28 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Puppy Details</title>
+  <link rel="stylesheet" href="/stylesheets/styles.css">
 </head>
 <body>
   <%- include('../partials/navbar') %>
-  <div>
-    <h1>Puppy Details</h1>
-    <div>
+  <div class="container">
+    <h1 class="page-title">Puppy Details</h1>
+    <div class="puppy-details">
       <p><strong>Name:</strong> <%= puppy.name %></p>
       <p><strong>Breed:</strong> <%= puppy.breed %></p>
       <p><strong>Coat:</strong> <%= puppy.coat || 'Not specified' %></p>
       <p><strong>Age:</strong> <%= puppy.age %> years</p>
       <p><strong>Good with Children:</strong> <%= puppy.isGoodWithChildren ? "Yes" : "No" %></p>
     </div>
-    <div>
+    <div class="actions">
       <form action="/puppies/<%= puppy._id %>?_method=DELETE" method="POST" style="display: inline;">
-        <button type="submit">Delete</button>
+        <button type="submit" class="btn-delete">Delete</button>
       </form>
-      <a href="/puppies/<%= puppy._id %>/edit">
-        <button type="submit">Edit</button>
+      <a href="/puppies/<%= puppy._id %>/edit" class="btn-edit">
+        <button type="button" class="btn">Edit</button>
       </a>
     </div>
-    <a href="/puppies">Back to Puppies List</a>
-  </div>
+    <a href="/puppies" class="btn-back">Back to Puppies List</a>
   </div>
 </body>
 </html>

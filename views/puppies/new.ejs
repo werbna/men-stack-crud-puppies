@@ -4,21 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>New Puppy</title>
+  <link rel="stylesheet" href="/stylesheets/styles.css">
 </head>
 <body>
   <%- include('../partials/navbar') %>
-  <div>
-    <h1>Create a New Puppy</h1>
-    <form action="/puppies" method="POST">
-      <div>
+  <div class="container">
+    <h1 class="page-title">Create a New Puppy</h1>
+    <form action="/puppies" method="POST" class="puppy-form">
+      <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
       </div>
-      <div>
+      <div class="form-group">
         <label for="breed">Breed:</label>
         <input type="text" id="breed" name="breed" required>
       </div>
-      <div>
+      <div class="form-group">
         <label for="coat">Coat:</label>
         <select id="coat" name="coat">
           <option value="">Select coat type</option>
@@ -28,19 +29,19 @@
           <option value="Curly">Curly</option>
         </select>
       </div>
-      <div>
+      <div class="form-group">
         <label for="age">Age (in years):</label>
         <input type="number" id="age" name="age" min="0" required>
       </div>
-      <div>
+      <div class="form-group">
         <label for="isGoodWithChildren">Good with Children:</label>
         <input type="checkbox" id="isGoodWithChildren" name="isGoodWithChildren">
       </div>
-      <div>
-        <button type="submit">Create Puppy</button>
+      <div class="form-group">
+        <button type="submit" class="btn">Create Puppy</button>
       </div>
     </form>
-    <a href="/puppies">Back to Puppies List</a>
+    <a href="/puppies" class="btn-back">Back to Puppies List</a>
   </div>
 </body>
 </html>
