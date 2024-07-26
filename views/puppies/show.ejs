@@ -6,12 +6,20 @@
 </head>
 <body>
   <div class="container">
+
     <h1>Puppy Details</h1>
+
     <div class="puppy-details">
       <h2><%= puppy.name %></h2>
       <p><strong>Breed:</strong> <%= puppy.breed %></p>
       <p><strong>Good with Children:</strong> <%= puppy.isGoodWithChildren ? "Yes" : "No" %></p>
     </div>
+
+    <form action="/puppies/<%=puppy._id%>?_method=DELETE" 
+      method="POST">
+      <button type="submit">Delete Puppy</button>
+    </form>
+
     <a href="/puppies" class="btn">Back to Puppies List</a>
   </div>
 </body>

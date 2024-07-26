@@ -59,6 +59,11 @@ app.post('/puppies', async (req,res) => {
 })
 
 //DELETE
+app.delete('/puppies/:puppyId', async (req,res) => {
+  await Puppy.findByIdAndDelete(req.params.puppyId);
+  res.redirect('/puppies')
+})
+//PUT 
 
 
 
